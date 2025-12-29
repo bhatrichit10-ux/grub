@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GRUB Bootloader</title>
-
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
+        <!-- wanted to use google fonts (material you one) but forgot to implement-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -17,30 +14,23 @@
     from { width: 0 }
     to { width: 100% }
   }
-
   @keyframes blink {
     50% { border-color: transparent }
   }
-
   .typing {
     overflow: hidden;
     white-space: nowrap;
-    border-right: 2px solid #4ade80; /* green cursor */
+    border-right: 2px solid #4ade80; /* green cursor- i really wanted to make this so i used google to find out how */
     animation:
       typing 2s steps(30, end),
       blink 1s step-end infinite;
   }
 </style>
-
-    </style>
-
 </head>
-
 <body class="bg-gray-900 text-white" style="font-family: Inter, sans-serif;">
    <nav class="border-b border-gray-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+            <div class="container px-4 sm:px-6 py-4 flex items-center justify-between">
                 <h1 class="text-2xl font-bold">GRUB</h1>
-
                 <button
                 id="menuBtn"
                 class="sm:hidden text-2xl focus:outline-none"
@@ -48,7 +38,6 @@
                 >
                 ☰
                 </button>
-
                 <div class="hidden sm:flex gap-8 text-lg">
                 <a class="border-b-2 border-transparent hover:border-white transition-colors">Overview</a>
                 <a class="border-b-2 border-transparent hover:border-white transition-colors">How it works</a>
@@ -56,7 +45,6 @@
                 <a class="border-b-2 border-transparent hover:border-white transition-colors">FAQ</a>
                 </div>
             </div>
-
             <div id="mobileMenu" class="hidden sm:hidden px-4 pb-4 space-y-3 text-lg">
                 <a class="block border-b border-gray-700 pb-2">Overview</a>
                 <a class="block border-b border-gray-700 pb-2">How it works</a>
@@ -69,15 +57,12 @@
                     // to get it the traditional way
             const menuBtn = document.getElementById("menuBtn");
             const mobileMenu = document.getElementById("mobileMenu");
-
             menuBtn.addEventListener("click", () => {
                 mobileMenu.classList.toggle("hidden");
             });
             </script>
-
-
     <section class="mt-24 px-6">
-        <div class="max-w-4xl mx-auto">
+        <div class="container">
             <div class="bg-black rounded-lg border border-gray-700 shadow-lg overflow-hidden">
                 <div class="flex items-center gap-2 px-4 py-2 bg-gray-800">
                     <span class="w-3 h-3 rounded-full bg-red-500"></span>
@@ -85,28 +70,18 @@
                     <span class="w-3 h-3 rounded-full bg-green-500"></span>
                     <span class="ml-3 text-sm">Grub CLI</span>
                 </div>
-
                 <div class="p-4 font-mono text-sm text-gray-200 leading-relaxed">
                     <p>GNU GRUB version 2.06</p>
                     <p class="text-gray-400">(Minimal bash-like line edits are supported)</p>
-
                     <p><span class="text-green-400">grub&gt;</span> ls</p>
                     <p class="text-gray-400">(hd0) (hd0,gpt1) (hd0,gpt2)</p>
-
                     <br>
-
-                    <p><span class="text-green-400">grub&gt;</span> set root=(hd0,gpt2)</p>
-
-                    <br>
-
+                 <p><span class="text-green-400">grub&gt;</span> set root=(hd0,gpt2)</p>
+                 <br>
                     <p><span class="text-green-400">grub&gt;</span> linux /vmlinuz-linux root=/dev/sda2</p>
-
                     <br>
-
                     <p><span class="text-green-400">grub&gt;</span> initrd /initramfs-linux.img</p>
-
                     <br>
-
                     <p><span class="text-green-400">grub&gt;</span> boot</p> <br>
                      <p><span class=" typing text-green-400">grub&gt  </span></p>
                 </div>
@@ -114,7 +89,7 @@
         </div>
     </section>
     <section class="mt-16 px-6">
-        <div class="max-w-4xl mx-auto">
+        <div class="container">
             <div class="bg-gray-800 border border-gray-700 rounded-lg p-6">
                 <h2 class="text-2xl   font-semibold mb-4   ">What is Grub?</h2>
                   <p class="text-gray-300 leading-relaxed mb-4">
@@ -130,7 +105,7 @@
         </div>
     </section>
     <section class="mt-16 px-6">
-        <dv class="max-w-5xl mx-auto">
+        <dv class="container">
             <h2 class="text-2xl font-semibold mb-6">
                 Grub commands
             </h2>
@@ -160,11 +135,10 @@
                     </p>
                 </div>
              </div>
-
-        </dv>
+        </div>
     </section>
     <footer class="'mt-24 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="container px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p class="text-sm text-gray-400">
                 Made by richit
             </p>
@@ -173,6 +147,11 @@
             </div>
         </div>
     </footer>
-
 </body>
 </html>
+
+<!-- a note for the reviewer  -->
+ <!-- I did not write the information about grub like the defininations -->
+  <!-- those were generated by google summary ai (the one at top you get after searching) -->
+<!--  i am still new to tailwind so thats why i didnt use any cool animations -->
+  <!-- thanks -->
